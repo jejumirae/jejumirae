@@ -1,0 +1,1491 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="제주 미래 자동문 — 자동문, 셔터, 각종 도어 설치·교체·수리와 정기점검 상담">
+  <title>제주 미래 자동문 | 설치부터 유지관리까지</title>
+  <style>
+    :root{--navy:#071827;--navy2:#102d42;--blue:#1da1f2;--cyan:#59d6ff;--paper:#f5f8fa;--ink:#10202b;--muted:#637684;--line:#dce6eb;--white:#fff;--orange:#ff9b38}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--white);font-family:Pretendard,"Noto Sans KR",Arial,sans-serif;line-height:1.65;word-break:keep-all}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .top{background:#04111b;color:#b8cedb;font-size:.86rem}.top .wrap{height:36px;display:flex;justify-content:flex-end;align-items:center;gap:20px}.top strong{color:#fff}
+    header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,230,235,.8)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.24rem;letter-spacing:-.04em}.mark{width:40px;height:40px;border-radius:9px;background:var(--navy);position:relative;box-shadow:inset 0 0 0 2px rgba(89,214,255,.22)}.mark:before,.mark:after{content:"";position:absolute;top:8px;bottom:8px;width:8px;border:2px solid var(--cyan)}.mark:before{left:8px}.mark:after{right:8px}.menu{display:flex;align-items:center;gap:31px;font-size:.96rem;font-weight:700}.menu a:hover{color:#087bb6}.call{padding:11px 18px;background:var(--navy);color:#fff!important;border-radius:7px}.hamb{display:none;border:0;background:none;font-size:1.5rem}
+
+    /* ---- 드롭다운 / 플라이아웃 ---- */
+    .nav-drop{position:relative}
+    .nav-drop>a{display:flex;align-items:center;gap:5px}
+    .nav-drop>a .caret{width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);margin-top:-3px}
+    .drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 22px 50px rgba(4,17,27,.16);padding:9px;min-width:200px;display:none;z-index:70}
+    .nav-drop:hover .drop-panel,.nav-drop.open .drop-panel{display:block}
+    .drop-panel a,.drop-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px;border-radius:7px;font-size:.87rem;font-weight:700;color:var(--ink);white-space:nowrap;position:relative;cursor:pointer}
+    .drop-panel a:hover,.drop-item:hover{background:var(--paper);color:#087bb6}
+    .drop-item .arrow{font-size:.72rem;color:var(--muted)}
+    .flyout{position:absolute;left:100%;top:-9px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 22px 50px rgba(4,17,27,.16);padding:9px;min-width:190px;display:none}
+    .drop-item:hover .flyout,.drop-item.open .flyout{display:block}
+    .flyout a{display:block;padding:9px 13px;border-radius:7px;font-size:.85rem;font-weight:600;color:var(--ink);white-space:nowrap}
+    .flyout a:hover{background:var(--paper);color:#087bb6}
+
+    .hero{color:white;background:linear-gradient(115deg,rgba(4,17,27,.98),rgba(8,40,60,.92));overflow:hidden;position:relative}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.7%,rgba(89,214,255,.07) 50%,transparent 50.3%),linear-gradient(0deg,transparent 49.7%,rgba(89,214,255,.05) 50%,transparent 50.3%);background-size:70px 70px}.hero .wrap{position:relative;min-height:610px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:60px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);font-weight:800;letter-spacing:.08em;font-size:.86rem}.eyebrow:before{content:"";width:32px;height:2px;background:var(--cyan)}h1{font-size:clamp(2.75rem,5.4vw,5rem);line-height:1.11;letter-spacing:-.065em;margin:20px 0 24px}.hero p{max-width:600px;color:#c4d7e1;font-size:1.12rem}.actions{display:flex;gap:12px;margin-top:38px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 23px;border-radius:7px;font-weight:800;border:0;cursor:pointer;font-family:inherit;font-size:1rem}.btn.primary{background:var(--cyan);color:#052236}.btn.ghost{border:1px solid #557184;color:#fff;background:transparent}.door-art{height:410px;position:relative;border:1px solid #31566d;background:linear-gradient(145deg,#163d55,#071925);box-shadow:0 30px 80px #0008}.door-art:before{content:"";position:absolute;inset:32px 42px 0;border:10px solid #7699ab;border-bottom:0;background:linear-gradient(90deg,rgba(89,214,255,.16) 49.3%,#b9d8e7 49.5%,#b9d8e7 50.5%,rgba(89,214,255,.09) 50.7%)}.door-art:after{content:"SENSOR  ·  SAFETY  ·  SERVICE";position:absolute;top:0;left:0;right:0;height:33px;display:flex;align-items:center;justify-content:center;background:var(--cyan);color:#052236;font-size:.73rem;font-weight:900;letter-spacing:.2em}.sensor{position:absolute;top:63px;left:50%;transform:translateX(-50%);width:49px;height:12px;border-radius:2px;background:#07131c;border:2px solid #8cb5c8;z-index:2}.beam{position:absolute;width:160px;height:160px;border:1px solid rgba(89,214,255,.28);border-radius:50%;top:28px;left:50%;transform:translateX(-50%)}
+    .door-art:before{transition:opacity .5s ease}
+    .door-art.has-photos:before{opacity:0}
+    .hero-slideshow{position:absolute;inset:0;overflow:hidden;z-index:1}
+    .hero-slideshow .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.3s ease}
+    .hero-slideshow .slide.is-active{opacity:1}
+    .hero-slideshow:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,25,37,.1),rgba(7,25,37,.62));pointer-events:none}
+    .hero-slide-tag{position:absolute;left:0;right:0;bottom:16px;text-align:center;z-index:3;color:var(--cyan);font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;opacity:.9}
+
+    section{padding:105px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px}.kicker{color:#087bb6;font-size:.82rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.section-head h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.055em;line-height:1.18;margin:8px 0 0}.section-head p{max-width:460px;color:var(--muted);margin:0}.services{background:var(--paper)}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);padding:29px 25px;min-height:245px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#79c9ee;box-shadow:0 18px 40px rgba(12,52,76,.09)}.num{font-size:.78rem;font-weight:900;color:#0d8dce}.icon{font-size:2rem;margin:24px 0 15px}.card h3{font-size:1.18rem;margin:0 0 9px}.card p{font-size:.94rem;color:var(--muted);margin:0}
+
+    /* ---- 회사소개: 인사말 / 오시는 길 ---- */
+    .sub-tab-bar{display:flex;gap:10px;margin-bottom:6px}
+    .sub-tab-bar a{padding:9px 18px;border:1.3px solid var(--line);border-radius:30px;font-size:.86rem;font-weight:700;color:var(--ink)}
+    .sub-tab-bar a:hover,.sub-tab-bar a.is-active{border-color:#087bb6;color:#087bb6}
+    .trust-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.panel{background:var(--navy);color:white;padding:48px;position:relative;box-shadow:18px 18px 0 #d7edf7}.panel small{color:var(--cyan);font-weight:800}.panel h3{font-size:2.05rem;line-height:1.3;margin:10px 0 28px}.check{display:grid;gap:17px}.check div{display:flex;gap:13px;color:#d0e0e8}.check b{color:var(--cyan)}.advantages{display:grid;grid-template-columns:1fr 1fr;gap:28px}.adv{border-top:2px solid var(--navy);padding-top:18px}.adv h3{font-size:1.15rem;margin:0 0 8px}.adv p{color:var(--muted);font-size:.93rem;margin:0}
+    .sign{margin-top:26px;display:flex;align-items:center;gap:14px}
+    .sign .avatar{width:52px;height:52px;border-radius:50%;background:#173e56;border:1px solid #31566d;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-weight:900}
+    .sign b{display:block;color:#fff}
+    .sign span{color:#9db6c4;font-size:.85rem}
+
+    .location-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+    .map-box{aspect-ratio:4/3.1;border:1.5px dashed #b9c8d1;border-radius:10px;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center;padding:20px}
+    .info-list{display:grid;gap:0}
+    .info-row{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+    .info-row:last-child{border-bottom:1px solid var(--line)}
+    .info-row .ico{width:38px;height:38px;border-radius:9px;background:var(--paper);display:flex;align-items:center;justify-content:center;color:#087bb6;flex-shrink:0}
+    .info-row b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:4px;font-weight:700}
+    .info-row p{margin:0;font-size:1rem;font-weight:700}
+
+    /* ---- 제품소개 개요 ---- */
+    .product-overview .cat-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .product-overview .cat-nav a{border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:8px;background:#fff}
+    .product-overview .cat-nav a:hover{border-color:#79c9ee;box-shadow:0 18px 40px rgba(12,52,76,.09);transform:translateY(-3px)}
+    .product-overview .cat-nav a b{font-size:1.05rem}
+    .product-overview .cat-nav a span{font-size:.85rem;color:var(--muted);font-weight:500}
+
+    /* ---- 제품 카테고리 / 리프 섹션 ---- */
+    .cat-block{padding:60px 0 20px;border-top:1px solid var(--line)}
+    .cat-block.standalone{padding-bottom:70px}
+    .cat-block-head{max-width:640px;margin-bottom:26px}
+    .cat-num{color:#087bb6;font-size:.78rem;font-weight:900;letter-spacing:.1em}
+    .cat-block-head h2{font-size:1.9rem;letter-spacing:-.03em;margin:8px 0 10px}
+    .cat-block-head p{color:var(--muted);margin:0;font-size:.98rem}
+    .sub-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+    .sub-tabs a{padding:9px 16px;border:1.3px solid var(--line);border-radius:30px;font-size:.85rem;font-weight:700;color:var(--ink);background:#fff}
+    .sub-tabs a:hover{border-color:#087bb6;color:#087bb6}
+
+    .leaf-block{padding:46px 0;border-top:1px solid var(--line);background:var(--paper)}
+    .leaf-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+    .leaf-parent{font-size:.78rem;font-weight:800;color:#087bb6;letter-spacing:.05em}
+    .leaf-head h3{font-size:1.4rem;margin:6px 0 8px;letter-spacing:-.02em}
+    .leaf-head p{margin:0;color:var(--muted);font-size:.92rem;max-width:520px}
+    .leaf-back{font-size:.82rem;font-weight:800;color:#087bb6;white-space:nowrap}
+
+    .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .photo-slot{aspect-ratio:1/1;border-radius:8px;border:1.5px dashed #b9c8d1;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#9aa9b3}
+    .photo-slot span{font-size:.72rem;font-weight:700}
+
+    .process{background:#0a202f;color:#fff}.process .section-head p{color:#adc3cf}.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #355467}.step{padding:31px 24px;border-right:1px solid #355467}.step:first-child{border-left:1px solid #355467}.step b{display:block;color:var(--cyan);font-size:.78rem;margin-bottom:27px}.step h3{margin:0 0 9px}.step p{margin:0;color:#9eb5c2;font-size:.9rem}
+    .cases .case-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+    .cases .case-filter button{padding:10px 20px;border-radius:30px;border:1.3px solid #355467;background:transparent;color:#c9dae2;font-size:.86rem;font-weight:700;cursor:pointer;font-family:inherit}
+    .cases .case-filter button:hover{border-color:var(--cyan);color:#fff}
+    .cases .case-filter button.is-active{background:var(--cyan);border-color:var(--cyan);color:#052236}
+    .cases .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.case{min-height:285px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;color:white;position:relative;overflow:hidden;background:linear-gradient(145deg,#1f536e,#081823)}.case:nth-child(6n+2){background:linear-gradient(145deg,#456474,#142833)}.case:nth-child(6n+3){background:linear-gradient(145deg,#1c7187,#08242e)}.case:nth-child(6n+4){background:linear-gradient(145deg,#2d5f47,#0c1e17)}.case:nth-child(6n+5){background:linear-gradient(145deg,#6e4f24,#241a0c)}.case:nth-child(6n){background:linear-gradient(145deg,#5a3766,#1c1024)}.case:before{content:"";position:absolute;inset:26px 34px 0;border:5px solid rgba(255,255,255,.23);border-bottom:0}.case>*{position:relative}.case span{font-size:.75rem;color:var(--cyan);font-weight:800}.case h3{font-size:1.35rem;margin:5px 0}.case p{margin:0;color:#c9dae2;font-size:.9rem}.case.is-hidden{display:none}.more{margin-top:25px;text-align:right;color:#087bb6;font-weight:800}
+    .contact{padding:0 0 105px}.contact-box{background:var(--cyan);color:#061c29;padding:58px 64px;display:flex;justify-content:space-between;align-items:center;gap:35px}.contact h2{font-size:clamp(2rem,4vw,3rem);line-height:1.2;letter-spacing:-.055em;margin:0 0 12px}.contact p{margin:0}.contact .btn{background:var(--navy);color:white;white-space:nowrap;font-size:1.15rem}
+
+    /* ---- 자료실 게시판 ---- */
+    .board{border-top:2px solid var(--navy)}
+    .board-head-row{display:grid;grid-template-columns:64px 1fr 120px;padding:14px 12px;font-size:.78rem;font-weight:800;color:var(--muted);border-bottom:1px solid var(--line)}
+    .board-head-row .col-date{text-align:right}
+    .board-row{border-bottom:1px solid var(--line)}
+    .board-row .row-main{display:grid;grid-template-columns:64px 1fr 120px;align-items:center;padding:17px 12px;cursor:pointer}
+    .board-row .row-main:hover{background:#fff}
+    .board-row .col-num{color:var(--muted);font-size:.85rem}
+    .board-row .col-title{font-weight:700;font-size:.96rem;display:flex;align-items:center;gap:6px}
+    .board-row .col-title .clip{color:#087bb6;font-size:.85rem}
+    .board-row .col-date{color:var(--muted);font-size:.82rem;text-align:right;display:flex;align-items:center;justify-content:flex-end;gap:8px}
+    .board-row .row-del{display:none;background:transparent;border:1px solid #d1453b;color:#d1453b;border-radius:5px;padding:4px 9px;font-size:.7rem;font-weight:800;cursor:pointer;font-family:inherit}
+    body.is-admin .board-row .row-del{display:inline-flex}
+    .board-row .row-body{display:none;padding:0 12px 26px 76px;color:var(--muted);font-size:.9rem;white-space:pre-wrap;line-height:1.7}
+    .board-row.is-open .row-body{display:block}
+    .board-row .file-link{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:9px 15px;background:var(--paper);border:1px solid var(--line);border-radius:6px;font-size:.82rem;font-weight:700;color:#087bb6}
+    .board-row .file-link:hover{border-color:#087bb6}
+    .board-empty{padding:64px 10px;text-align:center;color:var(--muted);font-size:.9rem}
+    .board-write-btn{display:none;margin-top:22px;padding:12px 24px;border-radius:7px;background:var(--navy);color:#fff;font-weight:800;border:0;cursor:pointer;font-family:inherit;font-size:.88rem}
+    body.is-admin .board-write-btn{display:inline-flex;align-items:center;gap:6px}
+
+    .rw-modal label{display:block;font-size:.8rem;font-weight:700;margin:14px 0 6px}
+    .rw-modal input[type=text],.rw-modal textarea{width:100%;padding:11px 13px;border:1.4px solid var(--line);border-radius:6px;font-size:.92rem;font-family:inherit}
+    .rw-modal textarea{min-height:130px;resize:vertical}
+    .rw-modal input:focus,.rw-modal textarea:focus{outline:none;border-color:#087bb6}
+    .rw-modal .file-row{display:flex;align-items:center;gap:10px}
+    .rw-modal .file-row span{font-size:.8rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .rw-file-btn{padding:9px 15px;border:1.4px solid var(--navy);border-radius:6px;font-size:.78rem;font-weight:700;color:var(--ink);background:#fff;cursor:pointer;white-space:nowrap}
+    .rw-file-btn:hover{background:var(--navy);color:#fff}
+    footer{background:#04111b;color:#849ba8;padding:48px 0;font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:30px}.foot strong{color:#fff;display:block;font-size:1rem;margin-bottom:8px}.foot a{color:#d4e3eb}
+
+    @media(max-width:900px){
+      .top{display:none}.nav{height:65px}
+      .menu{display:none;position:absolute;left:0;right:0;top:65px;padding:22px;background:white;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line);max-height:calc(100vh - 65px);overflow-y:auto}
+      .menu.open{display:flex}.hamb{display:block}
+      .drop-panel,.flyout{position:static;transform:none;box-shadow:none;border:0;padding-left:14px;display:none;min-width:0}
+      .drop-panel.open,.flyout.open{display:block}
+      .nav-drop>a .caret{transition:transform .15s}
+      .nav-drop.open>a .caret{transform:rotate(225deg);margin-top:3px}
+      .hero .wrap{min-height:auto;grid-template-columns:1fr;padding-top:80px;padding-bottom:70px}.door-art{height:310px}
+      .grid4{grid-template-columns:1fr 1fr}.trust-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
+      .step,.step:first-child{border:0;border-top:1px solid #355467}.cases .case-grid{grid-template-columns:1fr}
+      .contact-box{align-items:flex-start;flex-direction:column}.foot{flex-direction:column}
+      .section-head{align-items:flex-start;flex-direction:column}
+      .product-overview .cat-nav{grid-template-columns:1fr 1fr}
+      .location-wrap{grid-template-columns:1fr}
+      .photo-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .wrap{width:min(100% - 28px,1180px)}section{padding:76px 0}.brand{font-size:1.08rem}.mark{width:35px;height:35px}
+      .hero .wrap{gap:38px}.hero p{font-size:1rem}.actions{flex-direction:column}
+      .grid4,.advantages{grid-template-columns:1fr}.card{min-height:auto}
+      .panel{padding:35px 27px;box-shadow:9px 9px 0 #d7edf7}
+      .contact-box{padding:40px 27px}.contact .btn{width:100%}
+      .product-overview .cat-nav{grid-template-columns:1fr}
+    }
+
+    /* ================= 관리자 모드 ================= */
+    .admin-link{position:fixed;left:14px;bottom:14px;z-index:200;background:rgba(4,17,27,.82);color:#9db6c4;font-size:.72rem;font-weight:700;padding:7px 12px;border-radius:20px;cursor:pointer;border:1px solid #355467}
+    .admin-link:hover{color:#fff;border-color:var(--cyan)}
+    body.is-admin .admin-link{display:none}
+
+    .admin-overlay{position:fixed;inset:0;background:rgba(4,17,27,.65);display:none;align-items:center;justify-content:center;z-index:500;padding:20px}
+    .admin-overlay.open{display:flex}
+    .admin-modal{background:#fff;border-radius:12px;padding:34px 32px;width:100%;max-width:360px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+    .admin-modal h3{margin:0 0 6px;font-size:1.2rem}
+    .admin-modal p{margin:0 0 22px;color:var(--muted);font-size:.85rem}
+    .admin-modal label{display:block;font-size:.8rem;font-weight:700;margin:14px 0 6px}
+    .admin-modal input{width:100%;padding:11px 13px;border:1.4px solid var(--line);border-radius:6px;font-size:.95rem;font-family:inherit}
+    .admin-modal input:focus{outline:none;border-color:#087bb6}
+    .admin-modal .err{color:#d1453b;font-size:.8rem;margin-top:10px;display:none}
+    .admin-modal .err.show{display:block}
+    .admin-modal .row{display:flex;gap:10px;margin-top:22px}
+    .admin-modal button{flex:1;padding:12px;border-radius:6px;border:0;font-weight:800;font-size:.9rem;cursor:pointer;font-family:inherit}
+    .admin-modal .go{background:var(--navy);color:#fff}
+    .admin-modal .cancel{background:var(--paper);color:var(--ink)}
+
+    body.is-admin{padding-top:44px}
+    .admin-bar{display:none;position:fixed;top:0;left:0;right:0;height:44px;background:var(--navy);color:#fff;z-index:400;align-items:center;gap:14px;padding:0 18px;font-size:.82rem}
+    body.is-admin .admin-bar{display:flex}
+    .admin-bar b{color:var(--cyan)}
+    .admin-bar .sp{flex:1}
+    .admin-bar button{background:transparent;border:1px solid #355467;color:#cfe0e8;padding:7px 13px;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit}
+    .admin-bar button:hover{border-color:var(--cyan);color:#fff}
+    .admin-bar button.primary{background:var(--cyan);color:#052236;border-color:var(--cyan)}
+
+    body.is-admin [data-eid]{outline:1.5px dashed transparent;border-radius:3px;transition:outline-color .15s}
+    body.is-admin [contenteditable="true"]{cursor:text}
+    body.is-admin [contenteditable="true"]:hover{outline-color:#a9d3e6}
+    body.is-admin [contenteditable="true"]:focus{outline:1.5px solid #087bb6;outline-offset:2px;background:#f3fafd}
+
+    body.is-admin .photo-slot{cursor:pointer;position:relative}
+    body.is-admin .photo-slot:hover{outline:1.5px dashed #087bb6}
+    .photo-slot.has-img{border-style:solid;padding:0;overflow:hidden}
+    .photo-slot.has-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .photo-slot .slot-remove{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;background:rgba(4,17,27,.75);color:#fff;display:none;align-items:center;justify-content:center;font-size:.8rem;z-index:2}
+    body.is-admin .photo-slot.has-img:hover .slot-remove{display:flex}
+
+    body.is-admin .case{cursor:default}
+    body.is-admin .case .case-photo-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.92);color:var(--navy);border:0;border-radius:5px;padding:6px 10px;font-size:.72rem;font-weight:800;cursor:pointer;z-index:2}
+    body.is-admin .case .case-del-btn{position:absolute;top:10px;left:10px;background:rgba(209,69,59,.92);color:#fff;border:0;border-radius:5px;padding:6px 10px;font-size:.72rem;font-weight:800;cursor:pointer;z-index:2}
+    .case .case-photo-btn,.case .case-del-btn{display:none}
+    body.is-admin .case:hover .case-photo-btn,body.is-admin .case:hover .case-del-btn{display:block}
+    .case.has-bg{background-size:cover!important;background-position:center!important}
+    .case.has-bg:before{background:rgba(4,17,27,.38)}
+
+    .case-add-card{border:1.5px dashed #557184;background:transparent;color:#c9dae2;min-height:285px;display:none;align-items:center;justify-content:center;flex-direction:column;gap:10px;cursor:pointer;font-weight:800}
+    body.is-admin .case-add-card{display:flex}
+    .case-add-card:hover{border-color:var(--cyan);color:#fff}
+
+    .admin-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:12px 22px;border-radius:8px;font-size:.85rem;font-weight:700;z-index:600;opacity:0;pointer-events:none;transition:.25s}
+    .admin-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  </style>
+</head>
+<body>
+  <div class="admin-bar" id="adminBar">
+    <span>🔒 관리자 편집 모드 — <b>수정 사항은 이 브라우저에 자동 저장</b>됩니다.</span>
+    <div class="sp"></div>
+    <button id="adminSaveBtn">변경사항 저장</button>
+    <button id="adminExportBtn" class="primary">HTML 파일로 내보내기</button>
+    <button id="adminResetBtn">초기화</button>
+    <button id="adminLogoutBtn">로그아웃</button>
+  </div>
+  <div class="admin-link" id="adminOpenBtn">관리자 로그인</div>
+  <div class="admin-overlay" id="adminOverlay">
+    <div class="admin-modal">
+      <h3>관리자 로그인</h3>
+      <p>제주미래자동문 홈페이지 편집 모드입니다.</p>
+      <form id="adminLoginForm">
+        <label>아이디</label>
+        <input type="text" id="adminIdInput" autocomplete="off">
+        <label>비밀번호</label>
+        <input type="password" id="adminPwInput" autocomplete="off">
+        <div class="err" id="adminErr">아이디 또는 비밀번호가 올바르지 않습니다.</div>
+        <div class="row">
+          <button type="button" class="cancel" id="adminCancelBtn">취소</button>
+          <button type="submit" class="go">로그인</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="admin-toast" id="adminToast"></div>
+  <input type="file" id="adminFileInput" accept="image/*" style="display:none">
+
+  <div class="admin-overlay" id="resourceOverlay">
+    <div class="admin-modal rw-modal">
+      <h3>자료 등록</h3>
+      <p>자료실에 새 글을 등록합니다. 파일 첨부는 선택 사항입니다.</p>
+      <form id="resourceForm">
+        <label>제목</label>
+        <input type="text" id="rwTitle" required>
+        <label>내용</label>
+        <textarea id="rwContent" placeholder="자료에 대한 설명을 입력하세요"></textarea>
+        <label>파일첨부</label>
+        <div class="file-row">
+          <button type="button" class="rw-file-btn" id="rwFileBtn">파일 선택</button>
+          <span id="rwFileName">선택된 파일 없음</span>
+        </div>
+        <input type="file" id="rwFileInput" style="display:none">
+        <div class="row">
+          <button type="button" class="cancel" id="rwCancelBtn">취소</button>
+          <button type="submit" class="go">등록</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="top"><div class="wrap"><span>제주 미래 자동문</span><strong>상담전화 064-753-0031</strong></div></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home"><span class="mark"></span><span>제주 미래 자동문</span></a>
+      <nav class="menu" id="menu">
+        <div class="nav-drop">
+          <a href="#about-greeting">회사소개 <span class="caret"></span></a>
+          <div class="drop-panel">
+            <a href="#about-greeting">인사말</a>
+            <a href="#about-location">오시는 길</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a href="#product">제품소개 <span class="caret"></span></a>
+          <div class="drop-panel">
+            <div class="drop-item">자동문<span class="arrow">›</span><div class="flyout"><a href="#auto-sliding">일반슬라이딩자동문</a><a href="#auto-fire">방화자동문</a><a href="#auto-disabled">장애인용자동문</a><a href="#auto-double-sliding">이중슬라이딩자동문</a><a href="#auto-aluminum">알미늄자동문</a><a href="#auto-insulated">단열자동문</a><a href="#auto-industrial">산업용자동문</a><a href="#auto-peripheral">주변기기</a></div></div>
+                        <div class="drop-item">차고자동문<span class="arrow">›</span><div class="flyout"><a href="#garage-panel">판넬종류</a><a href="#garage-motor">모터</a></div></div>
+                        <a href="#product-overhead">산업용 오버헤드도어</a>
+                        <div class="drop-item">자동대문<span class="arrow">›</span><div class="flyout"><a href="#gate-aluminum">알루미늄 대문</a><a href="#gate-type">대문형식</a><a href="#gate-hardware">하드웨어</a></div></div>
+                        <div class="drop-item">방범셔터<span class="arrow">›</span><div class="flyout"><a href="#shutter-steel">철재방범셔터</a><a href="#shutter-pipe">스텐파이프셔터</a><a href="#shutter-wave">웨이브셔터</a><a href="#shutter-aluminum">알미늄셔터</a><a href="#shutter-euro-roller">유럽형롤러셔터</a><a href="#shutter-perforated">타공셔터</a></div></div>
+                        <a href="#product-wind-shutter">내풍압셔터</a>
+                        <a href="#product-insulated-shutter">단열셔터</a>
+                        <div class="drop-item">방화셔터(인정제품)<span class="arrow">›</span><div class="flyout"><a href="#fire-screen">스크린방화셔터</a><a href="#fire-steel">철재방화셔터</a><a href="#fire-combi">복합방화셔터(콤비셔터)</a><a href="#fire-smoke-curtain">제연커튼</a></div></div>
+                        <div class="drop-item">각종도어<span class="arrow">›</span><div class="flyout"><a href="#door-reinforced">강화도어</a><a href="#door-safe">세이프도어</a><a href="#door-folding">폴딩도어</a><a href="#door-system">시스템도어</a></div></div>
+          </div>
+        </div>
+        <a href="#case">시공사례</a>
+        <div class="nav-drop">
+          <a href="#support">고객지원 <span class="caret"></span></a>
+          <div class="drop-panel">
+            <a href="tel:0647530031">전화 상담</a>
+            <a href="#resources">자료실</a>
+            <a href="#support">온라인 문의</a>
+          </div>
+        </div>
+        <a class="call" href="tel:0647530031">전화상담</a>
+      </nav>
+      <button class="hamb" aria-label="메뉴 열기" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home"><div class="wrap"><div><div class="eyebrow">JEJU AUTOMATIC DOOR SERVICE</div><h1>문이 열리는 순간,<br>신뢰가 시작됩니다.</h1><p>자동문은 매일 수많은 사람의 안전과 동선을 책임지는 시설입니다. 제주 미래 자동문은 현장을 정확히 살피고, 필요한 작업을 분명하게 안내하며, 설치 이후의 관리까지 생각합니다.</p><div class="actions"><a class="btn primary" href="tel:0647530031">☎ 064-753-0031</a><a class="btn ghost" href="#product">제품소개 살펴보기</a></div></div><div class="door-art" aria-label="자동문의 구조를 형상화한 이미지"><span class="sensor"></span><span class="beam"></span></div></div></section>
+    <section id="about-greeting">
+      <div class="wrap trust-grid">
+        <div class="panel">
+          <small>GREETING</small>
+          <h3>제주에서 자동문을<br>가장 잘 아는 사람들이<br>직접 챙기겠습니다.</h3>
+          <div class="check">
+            <div><b>01</b><span>현장 조건을 먼저 확인하는 상담</span></div>
+            <div><b>02</b><span>작업 범위와 방향을 투명하게 안내</span></div>
+            <div><b>03</b><span>설치 후 사용과 관리까지 고려</span></div>
+            <div><b>04</b><span>제주 지역 현장에 집중한 대응</span></div>
+          </div>
+          <div class="sign">
+            <div class="avatar">代</div>
+            <div><b>대표 김영진</b><span>제주미래자동문</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="sub-tab-bar"><a class="is-active" href="#about-greeting">인사말</a><a href="#about-location">오시는 길</a></div>
+          <div class="section-head" style="margin-top:20px">
+            <div><div class="kicker">Our Standard</div><h2>신뢰받는 기업은<br>과정이 다릅니다.</h2></div>
+          </div>
+          <p style="color:var(--muted);margin:-18px 0 30px;max-width:520px">안녕하세요, 제주미래자동문 대표 김영진입니다. 자동문은 매일 여닫히며 안전과 편의를 동시에 책임지는 시설입니다. 저희는 눈에 보이는 설치뿐 아니라, 오래도록 안심하고 쓰실 수 있도록 시공 이후의 관리까지 함께 고민합니다. 제주 전역 현장을 빠르게 찾아가겠습니다.</p>
+          <div class="advantages">
+            <div class="adv"><h3>현장 중심 진단</h3><p>문 크기와 통행량, 설치 환경을 확인한 뒤 필요한 작업을 판단합니다.</p></div>
+            <div class="adv"><h3>분명한 설명</h3><p>고객이 이해할 수 있도록 작업 내용과 선택지를 명확하게 안내합니다.</p></div>
+            <div class="adv"><h3>안전을 고려한 시공</h3><p>편리함뿐 아니라 실제 이용자의 출입 동선과 안전을 함께 살핍니다.</p></div>
+            <div class="adv"><h3>지속적인 관계</h3><p>한 번의 설치로 끝내지 않고 점검과 유지관리 상담까지 이어갑니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-location" style="background:var(--paper)">
+      <div class="wrap">
+        <div class="sub-tab-bar"><a href="#about-greeting">인사말</a><a class="is-active" href="#about-location">오시는 길</a></div>
+        <div class="section-head" style="margin-top:20px">
+          <div><div class="kicker">Location</div><h2>오시는 길</h2></div>
+          <p>제주 전역 출장 상담이 가능합니다. 방문 전 미리 전화 주시면 더 정확히 안내해 드립니다.</p>
+        </div>
+        <div class="location-wrap">
+          <div class="map-box" style="border-style:solid;border-color:var(--line);padding:0;overflow:hidden;">
+            <iframe title="제주미래자동문 위치" width="100%" height="100%" style="border:0;min-height:320px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%84%A0%EB%B0%98%EB%82%A82%EA%B8%B8%2025&output=embed"></iframe>
+          </div>
+          <div class="info-list">
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.5 7.3 11.7.4.4 1 .4 1.4 0C13 21.5 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+              <div><b>주소</b><p>제주특별자치도 제주시 선반남2길 25(화북공단 내)</p></div>
+            </div>
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></div>
+              <div><b>전화</b><p>064-753-0031</p></div>
+            </div>
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7v5l3.5 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+              <div><b>영업시간</b><p>평일 09:00 - 18:00 (전화 상담은 24시간 접수)</p></div>
+            </div>
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 8h18" stroke="currentColor" stroke-width="1.8"/></svg></div>
+              <div><b>출장 가능 지역</b><p>제주시 · 서귀포시 전역</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="services product-overview" id="product">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Our Product</div><h2>제품소개</h2></div>
+          <p>아래 카테고리를 선택하시면 세부 제품 사진으로 바로 이동합니다.</p>
+        </div>
+        <div class="cat-nav">
+          <a href="#product-auto"><b>자동문</b><span>일반슬라이딩자동문 · 방화자동문 · 장애인용자동문 등 8종</span></a>
+          <a href="#product-garage-auto"><b>차고자동문</b><span>판넬종류 · 모터</span></a>
+          <a href="#product-overhead"><b>산업용 오버헤드도어</b><span>천장으로 접혀 올라가는 방식의 공장·창고용 산업용 오버헤드도어입니다.</span></a>
+          <a href="#product-auto-gate"><b>자동대문</b><span>알루미늄 대문 · 대문형식 · 하드웨어</span></a>
+          <a href="#product-security-shutter"><b>방범셔터</b><span>철재방범셔터 · 스텐파이프셔터 · 웨이브셔터 등 6종</span></a>
+          <a href="#product-wind-shutter"><b>내풍압셔터</b><span>제주의 강한 바람에도 견디도록 설계된 내풍압 셔터입니다. 태풍·강풍 지역 시공에 적합합니다.</span></a>
+          <a href="#product-insulated-shutter"><b>단열셔터</b><span>냉난방 효율을 높여주는 단열 사양 셔터로 에너지 손실을 줄여줍니다.</span></a>
+          <a href="#product-fire-shutter"><b>방화셔터(인정제품)</b><span>스크린방화셔터 · 철재방화셔터 · 복합방화셔터(콤비셔터) 등 4종</span></a>
+          <a href="#product-various-door"><b>각종도어</b><span>강화도어 · 세이프도어 · 폴딩도어 등 4종</span></a>
+        </div>
+      </div>
+    </section>
+
+<section class="cat-block" id="product-auto">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 01</span>
+      <h2 data-eid="product-auto-title">자동문</h2>
+      <p data-eid="product-auto-desc">출입 환경과 사용 목적에 맞는 자동문을 설계·시공합니다.</p>
+    </div>
+    <div class="sub-tabs">
+      <a href="#auto-sliding">일반슬라이딩자동문</a><a href="#auto-fire">방화자동문</a><a href="#auto-disabled">장애인용자동문</a><a href="#auto-double-sliding">이중슬라이딩자동문</a><a href="#auto-aluminum">알미늄자동문</a><a href="#auto-insulated">단열자동문</a><a href="#auto-industrial">산업용자동문</a><a href="#auto-peripheral">주변기기</a>
+    </div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-sliding">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-sliding-title">일반슬라이딩자동문</h3>
+        <p data-eid="auto-sliding-desc">상가·사무실 등 일반 출입구에 가장 많이 쓰이는 슬라이딩 자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-sliding-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-sliding-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-sliding-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-sliding-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-fire">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-fire-title">방화자동문</h3>
+        <p data-eid="auto-fire-desc">화재 시 안전한 구획 차단을 돕는 방화 기능이 적용된 자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-fire-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-fire-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-fire-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-fire-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-disabled">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-disabled-title">장애인용자동문</h3>
+        <p data-eid="auto-disabled-desc">휠체어 이용 등 교통약자의 편의를 고려해 설계된 자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-disabled-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-disabled-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-disabled-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-disabled-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-double-sliding">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-double-sliding-title">이중슬라이딩자동문</h3>
+        <p data-eid="auto-double-sliding-desc">출입 폭이 넓은 현장에 적합한 이중 슬라이딩 방식 자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-double-sliding-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-double-sliding-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-double-sliding-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-double-sliding-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-aluminum">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-aluminum-title">알미늄자동문</h3>
+        <p data-eid="auto-aluminum-desc">내구성과 부식 저항성이 뛰어난 알미늄 프레임 자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-aluminum-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-aluminum-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-aluminum-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-aluminum-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-insulated">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-insulated-title">단열자동문</h3>
+        <p data-eid="auto-insulated-desc">실내외 온도 차단이 필요한 현장을 위한 단열 사양 자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-insulated-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-insulated-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-insulated-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-insulated-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-industrial">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-industrial-title">산업용자동문</h3>
+        <p data-eid="auto-industrial-desc">공장·물류창고 등 산업 현장에 맞춘 고내구성 자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-industrial-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-industrial-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-industrial-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-industrial-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="auto-peripheral">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동문</span>
+        <h3 data-eid="auto-peripheral-title">주변기기</h3>
+        <p data-eid="auto-peripheral-desc">리모컨·안전센서 등 자동문 작동에 필요한 주변기기입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto">자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="auto-peripheral-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-peripheral-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-peripheral-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="auto-peripheral-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block" id="product-garage-auto">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 02</span>
+      <h2 data-eid="product-garage-auto-title">차고자동문</h2>
+      <p data-eid="product-garage-auto-desc">단독주택·전원주택 차고에 맞춘 자동문입니다. 판넬 종류와 모터를 선택해 시공합니다.</p>
+    </div>
+    <div class="sub-tabs">
+      <a href="#garage-panel">판넬종류</a><a href="#garage-motor">모터</a>
+    </div>
+  </div>
+</section>
+
+<section class="leaf-block" id="garage-panel">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">차고자동문</span>
+        <h3 data-eid="garage-panel-title">판넬종류</h3>
+        <p data-eid="garage-panel-desc">단열·비단열 등 현장에 맞는 다양한 판넬 종류로 제작하는 차고자동문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-garage-auto">차고자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="garage-panel-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="garage-panel-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="garage-panel-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="garage-panel-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="garage-motor">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">차고자동문</span>
+        <h3 data-eid="garage-motor-title">모터</h3>
+        <p data-eid="garage-motor-desc">정품 모터로 안정적이고 조용한 개폐를 제공하는 차고자동문 구동장치입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-garage-auto">차고자동문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="garage-motor-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="garage-motor-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="garage-motor-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="garage-motor-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block standalone" id="product-overhead">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 03</span>
+      <h2 data-eid="product-overhead-title">산업용 오버헤드도어</h2>
+      <p data-eid="product-overhead-desc">천장으로 접혀 올라가는 방식의 공장·창고용 산업용 오버헤드도어입니다.</p>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="product-overhead-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-overhead-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-overhead-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-overhead-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block" id="product-auto-gate">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 04</span>
+      <h2 data-eid="product-auto-gate-title">자동대문</h2>
+      <p data-eid="product-auto-gate-desc">주택·상가·공장 대문을 자동화하는 자동대문 시스템입니다.</p>
+    </div>
+    <div class="sub-tabs">
+      <a href="#gate-aluminum">알루미늄 대문</a><a href="#gate-type">대문형식</a><a href="#gate-hardware">하드웨어</a>
+    </div>
+  </div>
+</section>
+
+<section class="leaf-block" id="gate-aluminum">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동대문</span>
+        <h3 data-eid="gate-aluminum-title">알루미늄 대문</h3>
+        <p data-eid="gate-aluminum-desc">가볍고 부식에 강한 알루미늄 소재의 자동대문입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto-gate">자동대문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="gate-aluminum-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-aluminum-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-aluminum-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-aluminum-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="gate-type">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동대문</span>
+        <h3 data-eid="gate-type-title">대문형식</h3>
+        <p data-eid="gate-type-desc">스윙형·슬라이딩형 등 현장 여건에 맞는 대문 형식을 제안합니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto-gate">자동대문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="gate-type-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-type-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-type-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-type-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="gate-hardware">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">자동대문</span>
+        <h3 data-eid="gate-hardware-title">하드웨어</h3>
+        <p data-eid="gate-hardware-desc">리모컨·안전센서 등 자동대문 구동에 필요한 하드웨어입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-auto-gate">자동대문 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="gate-hardware-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-hardware-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-hardware-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="gate-hardware-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block" id="product-security-shutter">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 05</span>
+      <h2 data-eid="product-security-shutter-title">방범셔터</h2>
+      <p data-eid="product-security-shutter-desc">상가와 창고의 보안을 지켜주는 다양한 방범셔터를 시공합니다.</p>
+    </div>
+    <div class="sub-tabs">
+      <a href="#shutter-steel">철재방범셔터</a><a href="#shutter-pipe">스텐파이프셔터</a><a href="#shutter-wave">웨이브셔터</a><a href="#shutter-aluminum">알미늄셔터</a><a href="#shutter-euro-roller">유럽형롤러셔터</a><a href="#shutter-perforated">타공셔터</a>
+    </div>
+  </div>
+</section>
+
+<section class="leaf-block" id="shutter-steel">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방범셔터</span>
+        <h3 data-eid="shutter-steel-title">철재방범셔터</h3>
+        <p data-eid="shutter-steel-desc">견고한 철재 소재로 제작되어 보안성이 뛰어난 방범셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-security-shutter">방범셔터 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="shutter-steel-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-steel-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-steel-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-steel-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="shutter-pipe">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방범셔터</span>
+        <h3 data-eid="shutter-pipe-title">스텐파이프셔터</h3>
+        <p data-eid="shutter-pipe-desc">스테인리스 파이프 구조로 통풍성과 시야 확보가 가능한 셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-security-shutter">방범셔터 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="shutter-pipe-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-pipe-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-pipe-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-pipe-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="shutter-wave">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방범셔터</span>
+        <h3 data-eid="shutter-wave-title">웨이브셔터</h3>
+        <p data-eid="shutter-wave-desc">물결 형태의 슬랫으로 디자인성과 내구성을 함께 갖춘 셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-security-shutter">방범셔터 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="shutter-wave-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-wave-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-wave-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-wave-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="shutter-aluminum">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방범셔터</span>
+        <h3 data-eid="shutter-aluminum-title">알미늄셔터</h3>
+        <p data-eid="shutter-aluminum-desc">가볍고 부식에 강한 알미늄 소재의 방범셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-security-shutter">방범셔터 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="shutter-aluminum-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-aluminum-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-aluminum-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-aluminum-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="shutter-euro-roller">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방범셔터</span>
+        <h3 data-eid="shutter-euro-roller-title">유럽형롤러셔터</h3>
+        <p data-eid="shutter-euro-roller-desc">슬림하고 세련된 디자인의 유럽형 롤러셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-security-shutter">방범셔터 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="shutter-euro-roller-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-euro-roller-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-euro-roller-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-euro-roller-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="shutter-perforated">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방범셔터</span>
+        <h3 data-eid="shutter-perforated-title">타공셔터</h3>
+        <p data-eid="shutter-perforated-desc">일정한 구멍이 뚫려 있어 통풍과 시인성을 동시에 확보한 셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-security-shutter">방범셔터 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="shutter-perforated-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-perforated-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-perforated-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="shutter-perforated-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block standalone" id="product-wind-shutter">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 06</span>
+      <h2 data-eid="product-wind-shutter-title">내풍압셔터</h2>
+      <p data-eid="product-wind-shutter-desc">제주의 강한 바람에도 견디도록 설계된 내풍압 셔터입니다. 태풍·강풍 지역 시공에 적합합니다.</p>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="product-wind-shutter-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-wind-shutter-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-wind-shutter-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-wind-shutter-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block standalone" id="product-insulated-shutter">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 07</span>
+      <h2 data-eid="product-insulated-shutter-title">단열셔터</h2>
+      <p data-eid="product-insulated-shutter-desc">냉난방 효율을 높여주는 단열 사양 셔터로 에너지 손실을 줄여줍니다.</p>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="product-insulated-shutter-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-insulated-shutter-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-insulated-shutter-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="product-insulated-shutter-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block" id="product-fire-shutter">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 08</span>
+      <h2 data-eid="product-fire-shutter-title">방화셔터(인정제품)</h2>
+      <p data-eid="product-fire-shutter-desc">국가 품질인정을 받은 방화셔터로, 화재 발생 시 안전한 구획 차단을 보장합니다.</p>
+    </div>
+    <div class="sub-tabs">
+      <a href="#fire-screen">스크린방화셔터</a><a href="#fire-steel">철재방화셔터</a><a href="#fire-combi">복합방화셔터(콤비셔터)</a><a href="#fire-smoke-curtain">제연커튼</a>
+    </div>
+  </div>
+</section>
+
+<section class="leaf-block" id="fire-screen">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방화셔터(인정제품)</span>
+        <h3 data-eid="fire-screen-title">스크린방화셔터</h3>
+        <p data-eid="fire-screen-desc">유연한 스크린 소재로 화재 시 신속하게 구획을 차단하는 방화셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-fire-shutter">방화셔터(인정제품) 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="fire-screen-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-screen-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-screen-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-screen-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="fire-steel">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방화셔터(인정제품)</span>
+        <h3 data-eid="fire-steel-title">철재방화셔터</h3>
+        <p data-eid="fire-steel-desc">견고한 철재 슬랫으로 구성되어 내구성과 방화 성능을 모두 갖췄습니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-fire-shutter">방화셔터(인정제품) 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="fire-steel-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-steel-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-steel-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-steel-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="fire-combi">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방화셔터(인정제품)</span>
+        <h3 data-eid="fire-combi-title">복합방화셔터(콤비셔터)</h3>
+        <p data-eid="fire-combi-desc">방범과 방화 기능을 동시에 갖춘 복합(콤비) 방화셔터입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-fire-shutter">방화셔터(인정제품) 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="fire-combi-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-combi-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-combi-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-combi-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="fire-smoke-curtain">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">방화셔터(인정제품)</span>
+        <h3 data-eid="fire-smoke-curtain-title">제연커튼</h3>
+        <p data-eid="fire-smoke-curtain-desc">화재 시 연기 확산을 막아 피난 안전을 돕는 제연커튼입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-fire-shutter">방화셔터(인정제품) 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="fire-smoke-curtain-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-smoke-curtain-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-smoke-curtain-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="fire-smoke-curtain-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="cat-block" id="product-various-door">
+  <div class="wrap">
+    <div class="cat-block-head">
+      <span class="cat-num">PRODUCT 09</span>
+      <h2 data-eid="product-various-door-title">각종도어</h2>
+      <p data-eid="product-various-door-desc">용도에 따라 선택할 수 있는 다양한 특수 도어를 시공합니다.</p>
+    </div>
+    <div class="sub-tabs">
+      <a href="#door-reinforced">강화도어</a><a href="#door-safe">세이프도어</a><a href="#door-folding">폴딩도어</a><a href="#door-system">시스템도어</a>
+    </div>
+  </div>
+</section>
+
+<section class="leaf-block" id="door-reinforced">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">각종도어</span>
+        <h3 data-eid="door-reinforced-title">강화도어</h3>
+        <p data-eid="door-reinforced-desc">강화유리·강판을 적용해 내구성과 보안성을 높인 도어입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-various-door">각종도어 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="door-reinforced-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-reinforced-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-reinforced-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-reinforced-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="door-safe">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">각종도어</span>
+        <h3 data-eid="door-safe-title">세이프도어</h3>
+        <p data-eid="door-safe-desc">끼임 방지 등 안전 구조가 적용된 세이프도어입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-various-door">각종도어 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="door-safe-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-safe-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-safe-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-safe-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="door-folding">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">각종도어</span>
+        <h3 data-eid="door-folding-title">폴딩도어</h3>
+        <p data-eid="door-folding-desc">무레일 접이식 방식으로 넓은 개구부도 깔끔하게 개폐합니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-various-door">각종도어 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="door-folding-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-folding-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-folding-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-folding-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+
+<section class="leaf-block" id="door-system">
+  <div class="wrap">
+    <div class="leaf-head">
+      <div>
+        <span class="leaf-parent">각종도어</span>
+        <h3 data-eid="door-system-title">시스템도어</h3>
+        <p data-eid="door-system-desc">정밀 하드웨어로 구성되어 기밀성과 내구성이 뛰어난 도어입니다.</p>
+      </div>
+      <a class="leaf-back" href="#product-various-door">각종도어 목록으로 ↑</a>
+    </div>
+    <div class="photo-grid"><div class="photo-slot" data-eid="door-system-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-system-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-system-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-system-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
+  </div>
+</section>
+    <section class="process" id="process"><div class="wrap"><div class="section-head"><div><div class="kicker">Work Process</div><h2>상담부터 완료까지<br>차근차근 진행합니다.</h2></div><p>현장마다 조건이 다르기 때문에 전화 상담 후 방문 확인을 통해 구체적인 작업 방향을 안내합니다.</p></div><div class="steps"><div class="step"><b>STEP 01</b><h3>상담 접수</h3><p>현장 위치와 증상을 알려주세요.</p></div><div class="step"><b>STEP 02</b><h3>현장 확인</h3><p>설치 환경과 작동 상태를 살핍니다.</p></div><div class="step"><b>STEP 03</b><h3>작업 안내</h3><p>필요한 작업 범위를 설명합니다.</p></div><div class="step"><b>STEP 04</b><h3>설치·수리</h3><p>협의한 내용에 따라 진행합니다.</p></div><div class="step"><b>STEP 05</b><h3>확인·관리</h3><p>작동 확인과 관리 방법을 안내합니다.</p></div></div></div></section>
+    <section class="cases" id="case">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Field Portfolio</div><h2>다양한 현장에서<br>쌓아온 경험</h2></div>
+          <p>실제 시공 사진과 작업 내용은 기존 네이버 블로그 자료를 홈페이지 사례 페이지로 옮겨 신뢰를 보여주는 핵심 콘텐츠로 활용합니다.</p>
+        </div>
+        <div class="case-filter" id="caseFilter">
+          <button data-cat="all" class="is-active">전체</button>
+          <button data-cat="auto">자동문</button>
+          <button data-cat="garage">차고자동문</button>
+          <button data-cat="overhead">오버헤드도어</button>
+          <button data-cat="shutter">셔터 SHUTTER</button>
+          <button data-cat="gate">자동대문</button>
+          <button data-cat="door">각종 도어</button>
+        </div>
+        <div class="case-grid" id="caseGrid">
+          <article class="case" data-cat="auto" data-eid="case-1"><span>AUTO DOOR</span><h3 data-eid="case-1-title">상가·매장 자동문</h3><p data-eid="case-1-desc">고객 동선과 매장 환경을 고려한 출입문</p></article>
+          <article class="case" data-cat="auto" data-eid="case-2"><span>AUTO DOOR</span><h3 data-eid="case-2-title">병원·공공시설 자동문</h3><p data-eid="case-2-desc">이용 편의와 안전을 함께 고려한 출입 환경</p></article>
+          <article class="case" data-cat="garage" data-eid="case-3"><span>GARAGE</span><h3 data-eid="case-3-title">전원주택 차고자동문</h3><p data-eid="case-3-desc">단열·방풍 사양을 적용한 차고 자동문</p></article>
+          <article class="case" data-cat="garage" data-eid="case-4"><span>GARAGE</span><h3 data-eid="case-4-title">단독주택 차고자동문</h3><p data-eid="case-4-desc">정품 모터로 조용하고 안정적인 개폐</p></article>
+          <article class="case" data-cat="overhead" data-eid="case-5"><span>OVERHEAD</span><h3 data-eid="case-5-title">공장 오버헤드도어</h3><p data-eid="case-5-desc">천장 절약형 개폐로 넓은 작업 동선 확보</p></article>
+          <article class="case" data-cat="overhead" data-eid="case-6"><span>OVERHEAD</span><h3 data-eid="case-6-title">창고 오버헤드도어</h3><p data-eid="case-6-desc">산업 현장에 맞춘 고내구성 시공</p></article>
+          <article class="case" data-cat="shutter" data-eid="case-7"><span>SHUTTER</span><h3 data-eid="case-7-title">상가 방범셔터</h3><p data-eid="case-7-desc">보안과 미관을 함께 고려한 전동 셔터</p></article>
+          <article class="case" data-cat="shutter" data-eid="case-8"><span>SHUTTER</span><h3 data-eid="case-8-title">창고 방화셔터</h3><p data-eid="case-8-desc">국가 품질인정 제품으로 안전하게 시공</p></article>
+          <article class="case" data-cat="gate" data-eid="case-9"><span>AUTO GATE</span><h3 data-eid="case-9-title">주택 자동대문</h3><p data-eid="case-9-desc">스윙형 알루미늄 대문으로 편리한 출입</p></article>
+          <article class="case" data-cat="gate" data-eid="case-10"><span>AUTO GATE</span><h3 data-eid="case-10-title">공장 자동대문</h3><p data-eid="case-10-desc">슬라이딩 방식으로 넓은 출입구에 적합</p></article>
+          <article class="case" data-cat="door" data-eid="case-11"><span>DOOR</span><h3 data-eid="case-11-title">상업시설 시스템도어</h3><p data-eid="case-11-desc">정밀 하드웨어로 기밀성을 높인 도어</p></article>
+          <article class="case" data-cat="door" data-eid="case-12"><span>DOOR</span><h3 data-eid="case-12-title">리조트 폴딩도어</h3><p data-eid="case-12-desc">넓은 개구부를 깔끔하게 개폐하는 폴딩도어</p></article>
+          <button type="button" class="case-add-card" id="caseAddBtn"><span style="font-size:1.6rem">+</span><span>시공사례 추가</span></button>
+        </div>
+        <div class="more"><a href="https://blog.naver.com/autodoor04" target="_blank" rel="noopener">네이버 블로그 시공 기록 보기 →</a></div>
+      </div>
+    </section>
+    <section id="resources" style="background:var(--paper)">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Resources</div><h2>자료실</h2></div>
+          <p>카탈로그, 제품 사양서 등 참고 자료를 안내해 드립니다.</p>
+        </div>
+        <div class="board">
+          <div class="board-head-row">
+            <span class="col-num">번호</span><span class="col-title">제목</span><span class="col-date">등록일</span>
+          </div>
+          <div id="boardList">
+            <div class="board-empty">등록된 자료가 없습니다.</div>
+          </div>
+        </div>
+        <button type="button" class="board-write-btn" id="boardWriteBtn">✎ 글쓰기</button>
+      </div>
+    </section>
+    <section class="services" id="support"><div class="wrap"><div class="section-head"><div><div class="kicker">Customer Support</div><h2>설치부터<br>사후관리까지</h2></div><p>현장의 용도와 출입 환경을 살펴 적합한 방향을 안내합니다. 필요한 작업만 이해하기 쉽게 설명하는 것이 상담의 시작입니다.</p></div><div class="grid4"><article class="card"><span class="num">01</span><div class="icon">▣</div><h3>신규 설치</h3><p>상가·병원·사무실·공동주택 등 현장에 맞춘 자동문 설치 상담</p></article><article class="card"><span class="num">02</span><div class="icon">↔</div><h3>교체·리모델링</h3><p>노후 자동문, 출입구 환경 변화에 따른 교체 및 개선 상담</p></article><article class="card"><span class="num">03</span><div class="icon">⚙</div><h3>고장 점검·수리</h3><p>작동 이상과 소음 등 불편 사항을 확인하고 수리 방향 안내</p></article><article class="card"><span class="num">04</span><div class="icon">✓</div><h3>정기 점검</h3><p>안정적인 사용을 위한 주요 작동부와 안전 상태 점검 상담</p></article></div></div></section>
+    <section class="contact"><div class="wrap"><div class="contact-box"><div><h2>자동문 상담이 필요하신가요?</h2><p>현장 위치와 현재 상태를 알려주시면 상담이 더 빠릅니다.</p></div><a class="btn" href="tel:0647530031">☎ 064-753-0031</a></div></div></section>
+  </main>
+  <footer><div class="wrap foot"><div><strong>제주 미래 자동문</strong><span>자동문 · 셔터 · 각종 도어 설치 · 교체 · 수리 · 유지관리</span></div><div>상담전화 <a href="tel:0647530031">064-753-0031</a><br><span>사업자 정보와 주소는 최종 자료 확인 후 표기</span></div></div></footer>
+  <script>
+    document.querySelectorAll('#menu a:not(.nav-drop > a)').forEach(a => {
+      a.addEventListener('click', () => {
+        if(!a.closest('.drop-panel') && !a.closest('.flyout')) return;
+        document.getElementById('menu').classList.remove('open');
+        document.querySelectorAll('.nav-drop.open,.drop-item.open').forEach(el => el.classList.remove('open'));
+      });
+    });
+    function isMobile(){ return window.matchMedia('(max-width:900px)').matches; }
+    document.querySelectorAll('.nav-drop').forEach(function(drop){
+      var link = drop.querySelector(':scope > a');
+      link.addEventListener('click', function(e){
+        if(!isMobile()) return;
+        e.preventDefault();
+        var willOpen = !drop.classList.contains('open');
+        document.querySelectorAll('.nav-drop.open').forEach(function(d){ if(d!==drop) d.classList.remove('open'); });
+        drop.classList.toggle('open', willOpen);
+      });
+    });
+    document.querySelectorAll('.drop-item').forEach(function(item){
+      item.addEventListener('click', function(e){
+        if(!isMobile()) return;
+        if(e.target.closest('.flyout')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var willOpen = !item.classList.contains('open');
+        document.querySelectorAll('.drop-item.open').forEach(function(d){ if(d!==item) d.classList.remove('open'); });
+        item.classList.toggle('open', willOpen);
+      });
+    });
+    // 시공사례 카테고리 필터
+    (function(){
+      var filterBar = document.getElementById('caseFilter');
+      var grid = document.getElementById('caseGrid');
+      if(!filterBar || !grid) return;
+      filterBar.addEventListener('click', function(e){
+        var btn = e.target.closest('button');
+        if(!btn) return;
+        filterBar.querySelectorAll('button').forEach(function(b){ b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var cat = btn.getAttribute('data-cat');
+        grid.querySelectorAll('.case').forEach(function(card){
+          var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+          card.classList.toggle('is-hidden', !show);
+        });
+      });
+    })();
+
+    // ================= 관리자 모드 =================
+    (function(){
+      var ADMIN_ID = '@@jejumirae';
+      var ADMIN_PW = '@@7530031';
+      var STORAGE_KEY = 'jmad_site_edits_v1';
+      var LOGIN_KEY = 'jmad_admin_logged_in';
+      var PHOTO_PLACEHOLDER = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span>';
+      var CASE_CATS = [['auto','자동문'],['garage','차고자동문'],['overhead','오버헤드도어'],['shutter','셔터 SHUTTER'],['gate','자동대문'],['door','각종 도어']];
+
+      var body = document.body;
+      var overlay = document.getElementById('adminOverlay');
+      var openBtn = document.getElementById('adminOpenBtn');
+      var cancelBtn = document.getElementById('adminCancelBtn');
+      var loginForm = document.getElementById('adminLoginForm');
+      var idInput = document.getElementById('adminIdInput');
+      var pwInput = document.getElementById('adminPwInput');
+      var errBox = document.getElementById('adminErr');
+      var fileInput = document.getElementById('adminFileInput');
+      var toast = document.getElementById('adminToast');
+      var saveBtn = document.getElementById('adminSaveBtn');
+      var exportBtn = document.getElementById('adminExportBtn');
+      var resetBtn = document.getElementById('adminResetBtn');
+      var logoutBtn = document.getElementById('adminLogoutBtn');
+      var caseAddBtn = document.getElementById('caseAddBtn');
+      var caseGrid = document.getElementById('caseGrid');
+      if(!overlay || !caseGrid) return;
+
+      var pendingUploadTarget = null;
+      var saveTimer = null;
+      var heroArt = document.querySelector('.door-art');
+      var heroSlideshowEl = null;
+      var heroTimer = null;
+
+      function showToast(msg){
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+      }
+      function openLogin(){
+        overlay.classList.add('open');
+        errBox.classList.remove('show');
+        idInput.value = ''; pwInput.value = '';
+        setTimeout(function(){ idInput.focus(); }, 50);
+      }
+      function closeLogin(){ overlay.classList.remove('open'); }
+
+      openBtn.addEventListener('click', openLogin);
+      cancelBtn.addEventListener('click', closeLogin);
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) closeLogin(); });
+
+      loginForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(idInput.value === ADMIN_ID && pwInput.value === ADMIN_PW){
+          localStorage.setItem(LOGIN_KEY, '1');
+          closeLogin();
+          enterAdminMode();
+          showToast('관리자 모드로 전환되었습니다.');
+        } else {
+          errBox.classList.add('show');
+        }
+      });
+
+      logoutBtn.addEventListener('click', function(){
+        localStorage.removeItem(LOGIN_KEY);
+        location.reload();
+      });
+
+      resetBtn.addEventListener('click', function(){
+        if(confirm('저장된 모든 수정 내용을 초기화할까요? 이 동작은 되돌릴 수 없습니다.')){
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.removeItem('jmad_resources_v1');
+          location.reload();
+        }
+      });
+
+      saveBtn.addEventListener('click', function(){
+        persistEdits();
+        showToast('변경사항이 저장되었습니다.');
+      });
+
+      exportBtn.addEventListener('click', function(){
+        persistEdits();
+        exportHtml();
+      });
+
+      function debouncedSave(){
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(persistEdits, 500);
+      }
+
+      function enterAdminMode(){
+        body.classList.add('is-admin');
+        applyStoredEdits();
+        enableEditableText();
+        enablePhotoSlots();
+        enableCaseAdmin();
+      }
+
+      function enableEditableText(){
+        document.querySelectorAll('[data-eid]').forEach(function(el){
+          if(el.classList.contains('photo-slot')) return;
+          if(el.tagName === 'ARTICLE') return;
+          bindEditable(el);
+        });
+      }
+      function bindEditable(el){
+        el.setAttribute('contenteditable', 'true');
+        el.addEventListener('input', debouncedSave);
+        el.addEventListener('blur', persistEdits);
+      }
+
+      function enablePhotoSlots(){
+        document.querySelectorAll('.photo-slot[data-eid]').forEach(function(slot){
+          slot.addEventListener('click', function(e){
+            if(e.target.closest('.slot-remove')) return;
+            pendingUploadTarget = {type:'slot', el: slot};
+            fileInput.click();
+          });
+        });
+      }
+
+      function enableCaseAdmin(){
+        document.querySelectorAll('.case[data-eid]').forEach(setupCaseCard);
+        caseAddBtn.addEventListener('click', addNewCase);
+      }
+
+      function setupCaseCard(card){
+        if(card.querySelector('.case-photo-btn')) return;
+        card.style.position = 'relative';
+
+        var photoBtn = document.createElement('button');
+        photoBtn.type = 'button'; photoBtn.className = 'case-photo-btn'; photoBtn.textContent = '사진';
+        photoBtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          pendingUploadTarget = {type:'case', el: card};
+          fileInput.click();
+        });
+
+        var delBtn = document.createElement('button');
+        delBtn.type = 'button'; delBtn.className = 'case-del-btn'; delBtn.textContent = '삭제';
+        delBtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          if(confirm('이 시공사례를 삭제할까요?')){
+            card.remove();
+            persistEdits();
+            refreshHeroSlideshow();
+          }
+        });
+
+        var select = document.createElement('select');
+        select.className = 'case-cat-select';
+        select.style.cssText = 'position:absolute;bottom:10px;right:10px;z-index:2;font-size:.72rem;padding:4px 6px;border-radius:4px;border:0;display:none;';
+        CASE_CATS.forEach(function(opt){
+          var o = document.createElement('option');
+          o.value = opt[0]; o.textContent = opt[1];
+          if(card.getAttribute('data-cat') === opt[0]) o.selected = true;
+          select.appendChild(o);
+        });
+        select.addEventListener('click', function(e){ e.stopPropagation(); });
+        select.addEventListener('change', function(){
+          card.setAttribute('data-cat', select.value);
+          persistEdits();
+        });
+
+        card.appendChild(photoBtn);
+        card.appendChild(delBtn);
+        card.appendChild(select);
+
+        if(!document.getElementById('adminCaseSelectStyle')){
+          var styleTag = document.createElement('style');
+          styleTag.id = 'adminCaseSelectStyle';
+          styleTag.textContent = 'body.is-admin .case-cat-select{display:block!important;}';
+          document.head.appendChild(styleTag);
+        }
+      }
+
+      var caseCounter = 12;
+      function addNewCase(){
+        caseCounter++;
+        var id = 'case-' + caseCounter;
+        var article = document.createElement('article');
+        article.className = 'case';
+        var activeBtn = document.querySelector('#caseFilter button.is-active');
+        var cat = (activeBtn && activeBtn.getAttribute('data-cat') !== 'all') ? activeBtn.getAttribute('data-cat') : 'auto';
+        article.setAttribute('data-cat', cat);
+        article.setAttribute('data-eid', id);
+        article.innerHTML = '<span>NEW</span><h3 data-eid="'+id+'-title">새 시공사례 제목</h3><p data-eid="'+id+'-desc">설명을 입력하세요</p>';
+        caseGrid.insertBefore(article, caseAddBtn);
+        setupCaseCard(article);
+        article.querySelectorAll('[data-eid]').forEach(bindEditable);
+        persistEdits();
+        var h3 = article.querySelector('h3');
+        if(h3){ h3.focus(); }
+      }
+
+      fileInput.addEventListener('change', function(){
+        var file = fileInput.files[0];
+        if(!file || !pendingUploadTarget) return;
+        var reader = new FileReader();
+        reader.onload = function(){
+          var dataUrl = reader.result;
+          if(pendingUploadTarget.type === 'slot'){
+            setSlotImage(pendingUploadTarget.el, dataUrl);
+          } else if(pendingUploadTarget.type === 'case'){
+            setCaseImage(pendingUploadTarget.el, dataUrl);
+          }
+          persistEdits();
+          pendingUploadTarget = null;
+          fileInput.value = '';
+        };
+        reader.readAsDataURL(file);
+      });
+
+      function setSlotImage(slot, dataUrl){
+        slot.classList.add('has-img');
+        slot.innerHTML = '<img src="' + dataUrl + '" alt=""><span class="slot-remove">✕</span>';
+        slot.querySelector('.slot-remove').addEventListener('click', function(e){
+          e.stopPropagation();
+          clearSlotImage(slot);
+          persistEdits();
+        });
+      }
+      function clearSlotImage(slot){
+        slot.classList.remove('has-img');
+        slot.innerHTML = PHOTO_PLACEHOLDER;
+      }
+      function setCaseImage(card, dataUrl){
+        card.classList.add('has-bg');
+        card.style.backgroundImage = 'url(' + dataUrl + ')';
+        refreshHeroSlideshow();
+      }
+
+      function persistEdits(){
+        var data = { texts: {}, slots: {}, cases: [] };
+        document.querySelectorAll('[data-eid]').forEach(function(el){
+          if(el.classList.contains('photo-slot')) return;
+          if(el.tagName === 'ARTICLE') return;
+          var eid = el.getAttribute('data-eid');
+          if(eid) data.texts[eid] = el.innerHTML;
+        });
+        document.querySelectorAll('.photo-slot[data-eid]').forEach(function(slot){
+          var img = slot.querySelector('img');
+          if(img) data.slots[slot.getAttribute('data-eid')] = img.src;
+        });
+        document.querySelectorAll('#caseGrid .case[data-eid]').forEach(function(card){
+          var h3 = card.querySelector('h3'); var p = card.querySelector('p');
+          data.cases.push({
+            eid: card.getAttribute('data-eid'),
+            cat: card.getAttribute('data-cat'),
+            title: h3 ? h3.innerHTML : '',
+            desc: p ? p.innerHTML : '',
+            bg: card.classList.contains('has-bg') ? card.style.backgroundImage : ''
+          });
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function applyStoredEdits(){
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return;
+        var data;
+        try{ data = JSON.parse(raw); }catch(err){ return; }
+
+        Object.keys(data.texts || {}).forEach(function(eid){
+          var el = document.querySelector('[data-eid="' + eid + '"]');
+          if(el && el.tagName !== 'ARTICLE') el.innerHTML = data.texts[eid];
+        });
+        Object.keys(data.slots || {}).forEach(function(eid){
+          var slot = document.querySelector('.photo-slot[data-eid="' + eid + '"]');
+          if(slot) setSlotImage(slot, data.slots[eid]);
+        });
+        if(data.cases && data.cases.length){
+          var existing = {};
+          caseGrid.querySelectorAll('.case[data-eid]').forEach(function(c){ existing[c.getAttribute('data-eid')] = c; });
+          var maxNum = 12;
+          data.cases.forEach(function(c){
+            var el = existing[c.eid];
+            if(el){
+              el.setAttribute('data-cat', c.cat);
+              var h3 = el.querySelector('h3'); var p = el.querySelector('p');
+              if(h3) h3.innerHTML = c.title;
+              if(p) p.innerHTML = c.desc;
+              if(c.bg){ el.classList.add('has-bg'); el.style.backgroundImage = c.bg; }
+            } else {
+              var article = document.createElement('article');
+              article.className = 'case';
+              article.setAttribute('data-cat', c.cat);
+              article.setAttribute('data-eid', c.eid);
+              article.innerHTML = '<span>NEW</span><h3 data-eid="' + c.eid + '-title">' + c.title + '</h3><p data-eid="' + c.eid + '-desc">' + c.desc + '</p>';
+              if(c.bg){ article.classList.add('has-bg'); article.style.backgroundImage = c.bg; }
+              caseGrid.insertBefore(article, caseAddBtn);
+            }
+            var num = parseInt((c.eid || '').replace('case-', ''), 10);
+            if(!isNaN(num) && num > maxNum) maxNum = num;
+          });
+          caseCounter = maxNum;
+        }
+      }
+
+      function ensureHeroSlideshow(){
+        if(!heroArt) return null;
+        if(!heroSlideshowEl){
+          heroSlideshowEl = heroArt.querySelector('.hero-slideshow');
+        }
+        if(!heroSlideshowEl){
+          heroSlideshowEl = document.createElement('div');
+          heroSlideshowEl.className = 'hero-slideshow';
+          heroArt.insertBefore(heroSlideshowEl, heroArt.firstChild);
+        }
+        return heroSlideshowEl;
+      }
+
+      function refreshHeroSlideshow(){
+        if(!heroArt) return;
+        var urls = [];
+        document.querySelectorAll('#caseGrid .case.has-bg').forEach(function(card){
+          var bg = card.style.backgroundImage;
+          var m = bg && bg.match(/url\((['"]?)(.*?)\1\)/);
+          if(m && m[2] && urls.indexOf(m[2]) === -1) urls.push(m[2]);
+        });
+
+        if(heroTimer){ clearInterval(heroTimer); heroTimer = null; }
+
+        if(!urls.length){
+          var existing = heroArt.querySelector('.hero-slideshow');
+          if(existing) existing.remove();
+          heroSlideshowEl = null;
+          heroArt.classList.remove('has-photos');
+          return;
+        }
+
+        var el = ensureHeroSlideshow();
+        el.innerHTML = '';
+        urls.forEach(function(u, i){
+          var s = document.createElement('div');
+          s.className = 'slide' + (i === 0 ? ' is-active' : '');
+          s.style.backgroundImage = 'url(' + u + ')';
+          el.appendChild(s);
+        });
+        heroArt.classList.add('has-photos');
+
+        if(urls.length > 1){
+          var idx = 0;
+          heroTimer = setInterval(function(){
+            var slides = el.querySelectorAll('.slide');
+            if(!slides.length) return;
+            slides[idx].classList.remove('is-active');
+            idx = (idx + 1) % slides.length;
+            slides[idx].classList.add('is-active');
+          }, 3500);
+        }
+      }
+
+      function exportHtml(){
+        var clone = document.documentElement.cloneNode(true);
+        var cloneBody = clone.querySelector('body');
+        if(cloneBody) cloneBody.classList.remove('is-admin');
+        ['adminBar','adminOpenBtn','adminOverlay','adminToast','adminFileInput','resourceOverlay'].forEach(function(id){
+          var n = clone.querySelector('#' + id);
+          if(n) n.remove();
+        });
+        clone.querySelectorAll('.case-photo-btn,.case-del-btn,.case-cat-select,.case-add-card,.slot-remove,.hero-slideshow,.board-write-btn,.row-del').forEach(function(n){ n.remove(); });
+        var clonedDoorArt = clone.querySelector('.door-art');
+        if(clonedDoorArt) clonedDoorArt.classList.remove('has-photos');
+        clone.querySelectorAll('[contenteditable]').forEach(function(n){ n.removeAttribute('contenteditable'); });
+        var html = '<!doctype html>\n' + clone.outerHTML;
+        var blob = new Blob([html], {type: 'text/html'});
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = '제주미래자동문_홈페이지.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast('HTML 파일이 다운로드되었습니다.');
+      }
+
+      if(localStorage.getItem(LOGIN_KEY) === '1'){
+        enterAdminMode();
+      } else {
+        applyStoredEdits();
+      }
+      refreshHeroSlideshow();
+    })();
+
+    // ================= 자료실 게시판 =================
+    (function(){
+      var RES_KEY = 'jmad_resources_v1';
+      var boardList = document.getElementById('boardList');
+      var writeBtn = document.getElementById('boardWriteBtn');
+      var overlay = document.getElementById('resourceOverlay');
+      var form = document.getElementById('resourceForm');
+      var titleInput = document.getElementById('rwTitle');
+      var contentInput = document.getElementById('rwContent');
+      var fileBtn = document.getElementById('rwFileBtn');
+      var fileInput = document.getElementById('rwFileInput');
+      var fileNameLabel = document.getElementById('rwFileName');
+      var cancelBtn = document.getElementById('rwCancelBtn');
+      if(!boardList || !writeBtn || !overlay) return;
+
+      var pendingFile = null; // {name, dataUrl}
+
+      function isAdmin(){ return document.body.classList.contains('is-admin'); }
+
+      function loadPosts(){
+        var raw = localStorage.getItem(RES_KEY);
+        if(!raw) return null;
+        try{ return JSON.parse(raw); }catch(err){ return null; }
+      }
+      function savePosts(list){
+        localStorage.setItem(RES_KEY, JSON.stringify(list));
+      }
+
+      function escapeHtml(s){
+        var d = document.createElement('div');
+        d.textContent = s || '';
+        return d.innerHTML;
+      }
+
+      function renderPosts(list){
+        boardList.innerHTML = '';
+        if(!list || !list.length){
+          boardList.innerHTML = '<div class="board-empty">등록된 자료가 없습니다.</div>';
+          return;
+        }
+        list.forEach(function(post, i){
+          var num = list.length - i;
+          var row = document.createElement('div');
+          row.className = 'board-row';
+          row.setAttribute('data-id', post.id);
+
+          var fileHtml = post.fileDataUrl
+            ? '<a class="file-link" href="' + post.fileDataUrl + '" download="' + escapeHtml(post.fileName || '첨부파일') + '">📎 ' + escapeHtml(post.fileName || '첨부파일') + ' 다운로드</a>'
+            : '';
+
+          row.innerHTML =
+            '<div class="row-main">' +
+              '<span class="col-num">' + num + '</span>' +
+              '<span class="col-title">' + (post.fileDataUrl ? '<span class="clip">📎</span>' : '') + escapeHtml(post.title) + '</span>' +
+              '<span class="col-date">' + escapeHtml(post.date) + '<button type="button" class="row-del">삭제</button></span>' +
+            '</div>' +
+            '<div class="row-body">' + escapeHtml(post.content) + fileHtml + '</div>';
+
+          row.querySelector('.row-main').addEventListener('click', function(e){
+            if(e.target.closest('.row-del')) return;
+            row.classList.toggle('is-open');
+          });
+          var delBtn = row.querySelector('.row-del');
+          delBtn.addEventListener('click', function(e){
+            e.stopPropagation();
+            if(!isAdmin()) return;
+            if(confirm('이 자료를 삭제할까요?')){
+              var current = loadPosts() || [];
+              current = current.filter(function(p){ return p.id !== post.id; });
+              savePosts(current);
+              renderPosts(current);
+            }
+          });
+          boardList.appendChild(row);
+        });
+      }
+
+      function openWrite(){
+        if(!isAdmin()) return;
+        titleInput.value = '';
+        contentInput.value = '';
+        fileNameLabel.textContent = '선택된 파일 없음';
+        pendingFile = null;
+        overlay.classList.add('open');
+        setTimeout(function(){ titleInput.focus(); }, 50);
+      }
+      function closeWrite(){ overlay.classList.remove('open'); }
+
+      writeBtn.addEventListener('click', openWrite);
+      cancelBtn.addEventListener('click', closeWrite);
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) closeWrite(); });
+
+      fileBtn.addEventListener('click', function(){ fileInput.click(); });
+      fileInput.addEventListener('change', function(){
+        var file = fileInput.files[0];
+        if(!file) return;
+        var reader = new FileReader();
+        reader.onload = function(){
+          pendingFile = { name: file.name, dataUrl: reader.result };
+          fileNameLabel.textContent = file.name;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(!isAdmin()) return;
+        var today = new Date();
+        var dateStr = today.getFullYear() + '.' + String(today.getMonth() + 1).padStart(2, '0') + '.' + String(today.getDate()).padStart(2, '0');
+        var post = {
+          id: 'res-' + Date.now(),
+          title: titleInput.value.trim() || '제목 없음',
+          content: contentInput.value.trim(),
+          date: dateStr,
+          fileName: pendingFile ? pendingFile.name : '',
+          fileDataUrl: pendingFile ? pendingFile.dataUrl : ''
+        };
+        var list = loadPosts() || [];
+        list.unshift(post);
+        savePosts(list);
+        renderPosts(list);
+        closeWrite();
+      });
+
+      var stored = loadPosts();
+      if(stored) renderPosts(stored);
+    })();
+  </script>
+</body></html>
