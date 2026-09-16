@@ -92,6 +92,13 @@
     .cases .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.case{min-height:285px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;color:white;position:relative;overflow:hidden;background:linear-gradient(145deg,#1f536e,#081823)}.case:nth-child(6n+2){background:linear-gradient(145deg,#456474,#142833)}.case:nth-child(6n+3){background:linear-gradient(145deg,#1c7187,#08242e)}.case:nth-child(6n+4){background:linear-gradient(145deg,#2d5f47,#0c1e17)}.case:nth-child(6n+5){background:linear-gradient(145deg,#6e4f24,#241a0c)}.case:nth-child(6n){background:linear-gradient(145deg,#5a3766,#1c1024)}.case:before{content:"";position:absolute;inset:26px 34px 0;border:5px solid rgba(255,255,255,.23);border-bottom:0}.case>*{position:relative}.case span{font-size:.75rem;color:var(--cyan);font-weight:800}.case h3{font-size:1.35rem;margin:5px 0}.case p{margin:0;color:#c9dae2;font-size:.9rem}.case.is-hidden{display:none}.more{margin-top:25px;text-align:right;color:#087bb6;font-weight:800}
     .contact{padding:0 0 105px}.contact-box{background:var(--cyan);color:#061c29;padding:58px 64px;display:flex;justify-content:space-between;align-items:center;gap:35px}.contact h2{font-size:clamp(2rem,4vw,3rem);line-height:1.2;letter-spacing:-.055em;margin:0 0 12px}.contact p{margin:0}.contact .btn{background:var(--navy);color:white;white-space:nowrap;font-size:1.15rem}
 
+    /* ---- 제품소개 별도 페이지 뷰 ---- */
+    .pv-topbar{background:var(--navy);border-bottom:1px solid #355467}
+    .pv-topbar-inner{display:flex;align-items:center;gap:14px;height:54px}
+    .pv-back{color:var(--cyan);font-weight:800;font-size:.85rem}
+    .pv-back:hover{opacity:.8}
+    .pv-topbar-label{font-weight:800;font-size:.85rem;color:#cfe0e8;border-left:1px solid #355467;padding-left:14px}
+
     /* ---- 자료실 게시판 ---- */
     .board{border-top:2px solid var(--navy)}
     .board-head-row{display:grid;grid-template-columns:64px 1fr 120px;padding:14px 12px;font-size:.78rem;font-weight:800;color:var(--muted);border-bottom:1px solid var(--line)}
@@ -300,71 +307,15 @@
     </div>
   </header>
   <main>
+    <div id="homeView">
     <section class="hero" id="home"><div class="wrap"><div><div class="eyebrow">JEJU AUTOMATIC DOOR SERVICE</div><h1>문이 열리는 순간,<br>신뢰가 시작됩니다.</h1><p>자동문은 매일 수많은 사람의 안전과 동선을 책임지는 시설입니다. 제주 미래 자동문은 현장을 정확히 살피고, 필요한 작업을 분명하게 안내하며, 설치 이후의 관리까지 생각합니다.</p><div class="actions"><a class="btn primary" href="tel:0647530031">☎ 064-753-0031</a><a class="btn ghost" href="#product">제품소개 살펴보기</a></div></div><div class="door-art" aria-label="자동문의 구조를 형상화한 이미지"><span class="sensor"></span><span class="beam"></span></div></div></section>
-    <section id="about-greeting">
-      <div class="wrap trust-grid">
-        <div class="panel">
-          <small>GREETING</small>
-          <h3>제주에서 자동문을<br>가장 잘 아는 사람들이<br>직접 챙기겠습니다.</h3>
-          <div class="check">
-            <div><b>01</b><span>현장 조건을 먼저 확인하는 상담</span></div>
-            <div><b>02</b><span>작업 범위와 방향을 투명하게 안내</span></div>
-            <div><b>03</b><span>설치 후 사용과 관리까지 고려</span></div>
-            <div><b>04</b><span>제주 지역 현장에 집중한 대응</span></div>
-          </div>
-          <div class="sign">
-            <div class="avatar">代</div>
-            <div><b>대표 김영진</b><span>제주미래자동문</span></div>
-          </div>
-        </div>
-        <div>
-          <div class="sub-tab-bar"><a class="is-active" href="#about-greeting">인사말</a><a href="#about-location">오시는 길</a></div>
-          <div class="section-head" style="margin-top:20px">
-            <div><div class="kicker">Our Standard</div><h2>신뢰받는 기업은<br>과정이 다릅니다.</h2></div>
-          </div>
-          <p style="color:var(--muted);margin:-18px 0 30px;max-width:520px">안녕하세요, 제주미래자동문 대표 김영진입니다. 자동문은 매일 여닫히며 안전과 편의를 동시에 책임지는 시설입니다. 저희는 눈에 보이는 설치뿐 아니라, 오래도록 안심하고 쓰실 수 있도록 시공 이후의 관리까지 함께 고민합니다. 제주 전역 현장을 빠르게 찾아가겠습니다.</p>
-          <div class="advantages">
-            <div class="adv"><h3>현장 중심 진단</h3><p>문 크기와 통행량, 설치 환경을 확인한 뒤 필요한 작업을 판단합니다.</p></div>
-            <div class="adv"><h3>분명한 설명</h3><p>고객이 이해할 수 있도록 작업 내용과 선택지를 명확하게 안내합니다.</p></div>
-            <div class="adv"><h3>안전을 고려한 시공</h3><p>편리함뿐 아니라 실제 이용자의 출입 동선과 안전을 함께 살핍니다.</p></div>
-            <div class="adv"><h3>지속적인 관계</h3><p>한 번의 설치로 끝내지 않고 점검과 유지관리 상담까지 이어갑니다.</p></div>
-          </div>
-        </div>
+    <div id="productView" style="display:none">
+    <div class="pv-topbar">
+      <div class="wrap pv-topbar-inner">
+        <a href="#home" class="pv-back">← 홈으로</a>
+        <span class="pv-topbar-label">제품소개</span>
       </div>
-    </section>
-
-    <section id="about-location" style="background:var(--paper)">
-      <div class="wrap">
-        <div class="sub-tab-bar"><a href="#about-greeting">인사말</a><a class="is-active" href="#about-location">오시는 길</a></div>
-        <div class="section-head" style="margin-top:20px">
-          <div><div class="kicker">Location</div><h2>오시는 길</h2></div>
-          <p>제주 전역 출장 상담이 가능합니다. 방문 전 미리 전화 주시면 더 정확히 안내해 드립니다.</p>
-        </div>
-        <div class="location-wrap">
-          <div class="map-box" style="border-style:solid;border-color:var(--line);padding:0;overflow:hidden;">
-            <iframe title="제주미래자동문 위치" width="100%" height="100%" style="border:0;min-height:320px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%84%A0%EB%B0%98%EB%82%A82%EA%B8%B8%2025&output=embed"></iframe>
-          </div>
-          <div class="info-list">
-            <div class="info-row">
-              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.5 7.3 11.7.4.4 1 .4 1.4 0C13 21.5 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
-              <div><b>주소</b><p>제주특별자치도 제주시 선반남2길 25(화북공단 내)</p></div>
-            </div>
-            <div class="info-row">
-              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></div>
-              <div><b>전화</b><p>064-753-0031</p></div>
-            </div>
-            <div class="info-row">
-              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7v5l3.5 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
-              <div><b>영업시간</b><p>평일 09:00 - 18:00 (전화 상담은 24시간 접수)</p></div>
-            </div>
-            <div class="info-row">
-              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 8h18" stroke="currentColor" stroke-width="1.8"/></svg></div>
-              <div><b>출장 가능 지역</b><p>제주시 · 서귀포시 전역</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
     <section class="services product-overview" id="product">
       <div class="wrap">
         <div class="section-head">
@@ -873,7 +824,32 @@
     <div class="photo-grid"><div class="photo-slot" data-eid="door-system-photo-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-system-photo-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-system-photo-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div><div class="photo-slot" data-eid="door-system-photo-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg><span>사진 추가 예정</span></div></div>
   </div>
 </section>
-    <section class="process" id="process"><div class="wrap"><div class="section-head"><div><div class="kicker">Work Process</div><h2>상담부터 완료까지<br>차근차근 진행합니다.</h2></div><p>현장마다 조건이 다르기 때문에 전화 상담 후 방문 확인을 통해 구체적인 작업 방향을 안내합니다.</p></div><div class="steps"><div class="step"><b>STEP 01</b><h3>상담 접수</h3><p>현장 위치와 증상을 알려주세요.</p></div><div class="step"><b>STEP 02</b><h3>현장 확인</h3><p>설치 환경과 작동 상태를 살핍니다.</p></div><div class="step"><b>STEP 03</b><h3>작업 안내</h3><p>필요한 작업 범위를 설명합니다.</p></div><div class="step"><b>STEP 04</b><h3>설치·수리</h3><p>협의한 내용에 따라 진행합니다.</p></div><div class="step"><b>STEP 05</b><h3>확인·관리</h3><p>작동 확인과 관리 방법을 안내합니다.</p></div></div></div></section>
+    </div>
+    <div id="resourcesView" style="display:none">
+    <div class="pv-topbar">
+      <div class="wrap pv-topbar-inner">
+        <a href="#home" class="pv-back">← 홈으로</a>
+        <span class="pv-topbar-label">자료실</span>
+      </div>
+    </div>
+    <section id="resources" style="background:var(--paper)">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Resources</div><h2>자료실</h2></div>
+          <p>카탈로그, 제품 사양서 등 참고 자료를 안내해 드립니다.</p>
+        </div>
+        <div class="board">
+          <div class="board-head-row">
+            <span class="col-num">번호</span><span class="col-title">제목</span><span class="col-date">등록일</span>
+          </div>
+          <div id="boardList">
+            <div class="board-empty">등록된 자료가 없습니다.</div>
+          </div>
+        </div>
+        <button type="button" class="board-write-btn" id="boardWriteBtn">✎ 글쓰기</button>
+      </div>
+    </section>
+    </div>
     <section class="cases" id="case">
       <div class="wrap">
         <div class="section-head">
@@ -907,25 +883,74 @@
         <div class="more"><a href="https://blog.naver.com/autodoor04" target="_blank" rel="noopener">네이버 블로그 시공 기록 보기 →</a></div>
       </div>
     </section>
-    <section id="resources" style="background:var(--paper)">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="kicker">Resources</div><h2>자료실</h2></div>
-          <p>카탈로그, 제품 사양서 등 참고 자료를 안내해 드립니다.</p>
-        </div>
-        <div class="board">
-          <div class="board-head-row">
-            <span class="col-num">번호</span><span class="col-title">제목</span><span class="col-date">등록일</span>
-          </div>
-          <div id="boardList">
-            <div class="board-empty">등록된 자료가 없습니다.</div>
-          </div>
-        </div>
-        <button type="button" class="board-write-btn" id="boardWriteBtn">✎ 글쓰기</button>
-      </div>
-    </section>
+    <section class="process" id="process"><div class="wrap"><div class="section-head"><div><div class="kicker">Work Process</div><h2>상담부터 완료까지<br>차근차근 진행합니다.</h2></div><p>현장마다 조건이 다르기 때문에 전화 상담 후 방문 확인을 통해 구체적인 작업 방향을 안내합니다.</p></div><div class="steps"><div class="step"><b>STEP 01</b><h3>상담 접수</h3><p>현장 위치와 증상을 알려주세요.</p></div><div class="step"><b>STEP 02</b><h3>현장 확인</h3><p>설치 환경과 작동 상태를 살핍니다.</p></div><div class="step"><b>STEP 03</b><h3>작업 안내</h3><p>필요한 작업 범위를 설명합니다.</p></div><div class="step"><b>STEP 04</b><h3>설치·수리</h3><p>협의한 내용에 따라 진행합니다.</p></div><div class="step"><b>STEP 05</b><h3>확인·관리</h3><p>작동 확인과 관리 방법을 안내합니다.</p></div></div></div></section>
     <section class="services" id="support"><div class="wrap"><div class="section-head"><div><div class="kicker">Customer Support</div><h2>설치부터<br>사후관리까지</h2></div><p>현장의 용도와 출입 환경을 살펴 적합한 방향을 안내합니다. 필요한 작업만 이해하기 쉽게 설명하는 것이 상담의 시작입니다.</p></div><div class="grid4"><article class="card"><span class="num">01</span><div class="icon">▣</div><h3>신규 설치</h3><p>상가·병원·사무실·공동주택 등 현장에 맞춘 자동문 설치 상담</p></article><article class="card"><span class="num">02</span><div class="icon">↔</div><h3>교체·리모델링</h3><p>노후 자동문, 출입구 환경 변화에 따른 교체 및 개선 상담</p></article><article class="card"><span class="num">03</span><div class="icon">⚙</div><h3>고장 점검·수리</h3><p>작동 이상과 소음 등 불편 사항을 확인하고 수리 방향 안내</p></article><article class="card"><span class="num">04</span><div class="icon">✓</div><h3>정기 점검</h3><p>안정적인 사용을 위한 주요 작동부와 안전 상태 점검 상담</p></article></div></div></section>
     <section class="contact"><div class="wrap"><div class="contact-box"><div><h2>자동문 상담이 필요하신가요?</h2><p>현장 위치와 현재 상태를 알려주시면 상담이 더 빠릅니다.</p></div><a class="btn" href="tel:0647530031">☎ 064-753-0031</a></div></div></section>
+    <section id="about-greeting">
+      <div class="wrap trust-grid">
+        <div class="panel">
+          <small>GREETING</small>
+          <h3>제주에서 자동문을<br>가장 잘 아는 사람들이<br>직접 챙기겠습니다.</h3>
+          <div class="check">
+            <div><b>01</b><span>현장 조건을 먼저 확인하는 상담</span></div>
+            <div><b>02</b><span>작업 범위와 방향을 투명하게 안내</span></div>
+            <div><b>03</b><span>설치 후 사용과 관리까지 고려</span></div>
+            <div><b>04</b><span>제주 지역 현장에 집중한 대응</span></div>
+          </div>
+          <div class="sign">
+            <div class="avatar">代</div>
+            <div><b>대표 김영진</b><span>제주미래자동문</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="sub-tab-bar"><a class="is-active" href="#about-greeting">인사말</a><a href="#about-location">오시는 길</a></div>
+          <div class="section-head" style="margin-top:20px">
+            <div><div class="kicker">Our Standard</div><h2>신뢰받는 기업은<br>과정이 다릅니다.</h2></div>
+          </div>
+          <p style="color:var(--muted);margin:-18px 0 30px;max-width:520px">안녕하세요, 제주미래자동문 대표 김영진입니다. 자동문은 매일 여닫히며 안전과 편의를 동시에 책임지는 시설입니다. 저희는 눈에 보이는 설치뿐 아니라, 오래도록 안심하고 쓰실 수 있도록 시공 이후의 관리까지 함께 고민합니다. 제주 전역 현장을 빠르게 찾아가겠습니다.</p>
+          <div class="advantages">
+            <div class="adv"><h3>현장 중심 진단</h3><p>문 크기와 통행량, 설치 환경을 확인한 뒤 필요한 작업을 판단합니다.</p></div>
+            <div class="adv"><h3>분명한 설명</h3><p>고객이 이해할 수 있도록 작업 내용과 선택지를 명확하게 안내합니다.</p></div>
+            <div class="adv"><h3>안전을 고려한 시공</h3><p>편리함뿐 아니라 실제 이용자의 출입 동선과 안전을 함께 살핍니다.</p></div>
+            <div class="adv"><h3>지속적인 관계</h3><p>한 번의 설치로 끝내지 않고 점검과 유지관리 상담까지 이어갑니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-location" style="background:var(--paper)">
+      <div class="wrap">
+        <div class="sub-tab-bar"><a href="#about-greeting">인사말</a><a class="is-active" href="#about-location">오시는 길</a></div>
+        <div class="section-head" style="margin-top:20px">
+          <div><div class="kicker">Location</div><h2>오시는 길</h2></div>
+          <p>제주 전역 출장 상담이 가능합니다. 방문 전 미리 전화 주시면 더 정확히 안내해 드립니다.</p>
+        </div>
+        <div class="location-wrap">
+          <div class="map-box" style="border-style:solid;border-color:var(--line);padding:0;overflow:hidden;">
+            <iframe title="제주미래자동문 위치" width="100%" height="100%" style="border:0;min-height:320px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%84%A0%EB%B0%98%EB%82%A82%EA%B8%B8%2025&output=embed"></iframe>
+          </div>
+          <div class="info-list">
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.5 7.3 11.7.4.4 1 .4 1.4 0C13 21.5 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+              <div><b>주소</b><p>제주특별자치도 제주시 선반남2길 25(화북공단 내)</p></div>
+            </div>
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></div>
+              <div><b>전화</b><p>064-753-0031</p></div>
+            </div>
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7v5l3.5 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+              <div><b>영업시간</b><p>평일 09:00 - 18:00 (전화 상담은 24시간 접수)</p></div>
+            </div>
+            <div class="info-row">
+              <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 8h18" stroke="currentColor" stroke-width="1.8"/></svg></div>
+              <div><b>출장 가능 지역</b><p>제주시 · 서귀포시 전역</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
   </main>
   <footer><div class="wrap foot"><div><strong>제주 미래 자동문</strong><span>자동문 · 셔터 · 각종 도어 설치 · 교체 · 수리 · 유지관리</span></div><div>상담전화 <a href="tel:0647530031">064-753-0031</a><br><span>사업자 정보와 주소는 최종 자료 확인 후 표기</span></div></div></footer>
   <script>
@@ -1341,6 +1366,12 @@
         var clonedDoorArt = clone.querySelector('.door-art');
         if(clonedDoorArt) clonedDoorArt.classList.remove('has-photos');
         clone.querySelectorAll('[contenteditable]').forEach(function(n){ n.removeAttribute('contenteditable'); });
+        var cloneHomeView = clone.querySelector('#homeView');
+        if(cloneHomeView) cloneHomeView.style.display = '';
+        var cloneProductView = clone.querySelector('#productView');
+        if(cloneProductView) cloneProductView.style.display = 'none';
+        var cloneResourcesView = clone.querySelector('#resourcesView');
+        if(cloneResourcesView) cloneResourcesView.style.display = 'none';
         var html = '<!doctype html>\n' + clone.outerHTML;
         var blob = new Blob([html], {type: 'text/html'});
         var a = document.createElement('a');
@@ -1486,6 +1517,78 @@
 
       var stored = loadPosts();
       if(stored) renderPosts(stored);
+    })();
+
+    // ================= 페이지 전환 (제품소개 / 자료실) =================
+    (function(){
+      var homeView = document.getElementById('homeView');
+      var pageViews = ['productView', 'resourcesView']
+        .map(function(id){ return document.getElementById(id); })
+        .filter(Boolean);
+      if(!homeView || !pageViews.length) return;
+
+      function findViewFor(id){
+        var el = document.getElementById(id);
+        if(!el) return null;
+        for(var i = 0; i < pageViews.length; i++){
+          if(el.closest('#' + pageViews[i].id)) return pageViews[i];
+        }
+        return null;
+      }
+
+      function scrollToId(id){
+        var el = document.getElementById(id);
+        if(!el) return;
+        setTimeout(function(){
+          var y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }, 30);
+      }
+
+      function showView(view, targetId){
+        homeView.style.display = 'none';
+        pageViews.forEach(function(v){ v.style.display = (v === view) ? '' : 'none'; });
+        window.scrollTo(0, 0);
+        if(targetId && targetId !== view.id) scrollToId(targetId);
+      }
+      function showHome(targetId){
+        pageViews.forEach(function(v){ v.style.display = 'none'; });
+        homeView.style.display = '';
+        window.scrollTo(0, 0);
+        if(targetId && targetId !== 'home') scrollToId(targetId);
+      }
+
+      document.addEventListener('click', function(e){
+        var a = e.target.closest('a[href^="#"]');
+        if(!a) return;
+        var id = a.getAttribute('href').slice(1);
+        if(!id) return;
+
+        if(id === 'home'){
+          e.preventDefault();
+          showHome(null);
+          history.replaceState(null, '', '#home');
+          return;
+        }
+        var view = findViewFor(id);
+        if(view){
+          e.preventDefault();
+          showView(view, id);
+          history.replaceState(null, '', '#' + id);
+          return;
+        }
+        if(document.getElementById(id)){
+          e.preventDefault();
+          showHome(id);
+          history.replaceState(null, '', '#' + id);
+        }
+      });
+
+      var initialHash = (location.hash || '').replace('#', '');
+      var initialView = initialHash ? findViewFor(initialHash) : null;
+      if(initialView){
+        showView(initialView, initialHash);
+      }
     })();
   </script>
 </body></html>
